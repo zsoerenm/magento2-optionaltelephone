@@ -1,9 +1,51 @@
 <?php
 namespace Zorn\OptionalTelephone\Model\ResourceModel;
 
+use Magento\Customer\Model\Address as CustomerAddressModel;
+use Magento\Framework\Exception\InputException;
 
 class AddressRepository extends \Magento\Customer\Model\ResourceModel\AddressRepository
 {
+
+    /**
+     * Save customer address.
+     *
+     * @param \Magento\Customer\Api\Data\AddressInterface $address
+     * @return \Magento\Customer\Api\Data\AddressInterface
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
+    public function save(\Magento\Customer\Api\Data\AddressInterface $address)
+    {
+        $addressModel = null;
+        $customerModel = $this->customerRegistry->retrieve($address->getCustomerId());
+        if ($address->getId()) {
+            $addressModel = $this->addressRegistry->retrieve($address->getId());
+        }
+
+        if ($addressModel === null) {
+            /** @var \Magento\Customer\Model\Address $addressModel */
+            $addressModel = $this->addressFactory->create();
+            $addressModel->updateData($address);
+            $addressModel->setCustomer($customerModel);
+        } else {
+            $addressModel->updateData($address);
+        }
+
+        $inputException = $this->_validate($addressModel);
+        if ($inputException->wasErrorAdded()) {
+            throw $inputException;
+        }
+        $addressModel->save();
+        $address->setId($addressModel->getId());
+        // Clean up the customer registry since the Address save has a
+        // side effect on customer : \Magento\Customer\Model\ResourceModel\Address::_afterSave
+        $this->customerRegistry->remove($address->getCustomerId());
+        $this->addressRegistry->push($addressModel);
+        $customerModel->getAddressesCollection()->clear();
+
+        return $addressModel->getDataModel();
+    }
+
     /**
      * Validate Customer Addresses attribute values.
      *
