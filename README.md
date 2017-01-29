@@ -1,4 +1,4 @@
-Zorn_OptionalTelephone
+﻿Zorn_OptionalTelephone
 ===================
 OptionalTelephone removes the telephone requirement in Magento 2 
 
@@ -13,7 +13,7 @@ Please go to the Magento2 root directory and run the following commands in the s
 
 ```
 composer config repositories.zorn_optionaltelephone vcs git@github.com:zsoerenm/magento2-optionaltelephone.git
-composer require zsoerenm/magento2-optionaltelephone:dev-master
+composer require zsoerenm/magento2-optionaltelephone
 bin/magento module:enable Zorn_OptionalTelephone
 bin/magento setup:upgrade
 ```
