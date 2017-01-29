@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Sales\Model\Order\Address\Validator" type="Zorn\OptionalTelephone\Model\Order\Address\Validator" />
+    <preference for="Magento\Customer\Model\Address\AbstractAddress" type="Zorn\OptionalTelephone\Model\Address\AbstractAddress" />
+    <preference for="Magento\Customer\Model\ResourceModel\AddressRepository" type="Zorn\OptionalTelephone\Model\ResourceModel\AddressRepository" />
+</config>

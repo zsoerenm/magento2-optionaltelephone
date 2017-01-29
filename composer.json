@@ -1,0 +1,26 @@
+{
+  "name": "zsoerenm/magento2-optionaltelephone",
+  "description": "Remove telephone requirements in Magento 2",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "magento/module-store": "*",
+    "magento/module-backend": "*",
+    "magento/framework": "*"
+  },
+  "type": "magento2-module",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Sören Zorn",
+      "email": "zorn@rwth-aachen.de"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Zorn\\OptionalTelephone\\": ""
+    }
+  }
+}
