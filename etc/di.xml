@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Sales\Model\Order\Address\Validator" type="Zorn\OptionalTelephone\Model\Order\Address\Validator" />
-    <preference for="Magento\Customer\Model\Address\AbstractAddress" type="Zorn\OptionalTelephone\Model\Address\AbstractAddress" />
     <preference for="Magento\Customer\Model\ResourceModel\AddressRepository" type="Zorn\OptionalTelephone\Model\ResourceModel\AddressRepository" />
+    <type name="Magento\Customer\Model\Address\AbstractAddress">
+        <plugin name="magento_customer_model_address_abstractaddress_plugin"
+                type="Zorn\OptionalTelephone\Model\Address\AbstractAddress\Plugin"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Sales\Model\Order\Address\Validator">
+        <plugin name="magento_sales_model_order_address_validator_plugin"
+                type="Zorn\OptionalTelephone\Model\Order\Address\Validator\Plugin"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
 </config>
