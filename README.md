@@ -25,6 +25,17 @@ Uninstall
 bin/magento module:uninstall Zorn_OptionalTelephone
 bin/magento setup:upgrade
 ```
+### Note
+Currently there is known bug when uninstalling: [GitHub](https://github.com/magento/magento2/issues/3544).
+Instead remove the repository from your composer.json and run 
+```
+composer update
+```
+
+Also run this SQL statement:
+```
+UPDATE eav_attribute SET is_required=1 WHERE attribute_code='telephone';
+```
 
 Support
 -------
