@@ -26,8 +26,8 @@ bin/magento module:uninstall Zorn_OptionalTelephone
 bin/magento setup:upgrade
 ```
 ### Note
-Currently there is known bug when uninstalling: [GitHub](https://github.com/magento/magento2/issues/3544).
-Instead remove the repository from your composer.json and run 
+Currently there is known bug when uninstalling: [Magento2 - #3544](https://github.com/magento/magento2/issues/3544).
+Instead remove the repository from your composer.json and run from root 
 ```
 composer update
 ```
