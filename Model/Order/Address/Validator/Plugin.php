@@ -1,5 +1,5 @@
 <?php
-namespace Zorn\OptionalTelephone\Model\Address\AbstractAddress;
+namespace Zorn\OptionalTelephone\Model\Order\Address\Validator;
 
 class Plugin
 {
