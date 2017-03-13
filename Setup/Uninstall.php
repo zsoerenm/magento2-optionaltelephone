@@ -1,5 +1,5 @@
 <?php
-namespace Zorn\Telephone\Setup;
+namespace Zorn\OptionalTelephone\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
