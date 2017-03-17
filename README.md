@@ -23,6 +23,11 @@ Copy the source into
 ```
 {Magento root}/app/code/Zorn/OptionalTelephone/
 ```
+and run
+```
+bin/magento module:enable Zorn_OptionalTelephone
+bin/magento setup:upgrade
+```
 
 Uninstall
 ------------
