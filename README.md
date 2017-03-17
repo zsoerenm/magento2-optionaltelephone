@@ -17,6 +17,12 @@ composer require zsoerenm/magento2-optionaltelephone
 bin/magento module:enable Zorn_OptionalTelephone
 bin/magento setup:upgrade
 ```
+### Via manual install
+
+Copy the source into
+```
+{Magento root}/app/code/Zorn/OptionalTelephone/
+```
 
 Uninstall
 ------------
