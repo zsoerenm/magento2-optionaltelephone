@@ -1,6 +1,8 @@
 ﻿Zorn_OptionalTelephone
 ===================
-OptionalTelephone removes the telephone requirement in Magento 2 
+OptionalTelephone removes the telephone requirement in Magento 2
+
+THIS IS NOT NEEDED IN MAGENTO 2.2 ANYMORE! There is an option in the backend to disable the telephone requirement.
 
 When uninstalled the requirement will be re-established.
 
